@@ -1,0 +1,36 @@
+NPS Score = ​
+
+VAR detractors = CALCULATE(
+    COUNTROWS('Your Table'),
+        FILTER('Your Table',
+        'Your Table'[NPS]<=6)
+    )​
+
+VAR passives = CALCULATE(
+    COUNTROWS('Your Table'),
+        FILTER('Your Table',
+        'Your Table'[NPS]=7)
+    )
+    +CALCULATE(
+        COUNTROWS('Your Table'),
+        FILTER('Your Table',
+        'Your Table'[NPS]=8)
+    )​
+
+VAR promoters = CALCULATE(
+    COUNTROWS('Your Table'),
+        FILTER('Your Table',
+        'Your Table'[NPS]>=9)
+    )​
+
+VAR total = COUNTROWS('Your Table')​
+
+VAR score = (promoters/total*100)-(detractors/total*100)​
+
+RETURN If(
+        ISBLANK(score),
+        0,
+        score
+    )​
+
+​
