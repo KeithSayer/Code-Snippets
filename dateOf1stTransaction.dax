@@ -1,0 +1,8 @@
+//DAX Date of 1st Transaction Calculated Column
+Date of 1st Transaction = CALCULATE(
+    FIRSTDATE(SalesDashboard[Posting_Date]),
+    FILTER(
+      SalesDashboard,
+      SalesDashboard[CustomerName]=Customers[CustomerName]
+    )
+  )
