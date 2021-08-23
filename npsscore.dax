@@ -1,5 +1,6 @@
 NPS Score = ​
 
+//be sure you have a question in your survey asking "How likely would you be to recommend us?" with a scale of 0-10
 VAR detractors = CALCULATE(
     COUNTROWS('Your Table'),
         FILTER('Your Table',
