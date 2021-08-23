@@ -1,1 +1,15 @@
-Set(FileLinkSharePoint, SocialPicShare.Run(TextInput1.Text & ".jpg",Image1,TwitterTweet,TwitterTweet,Message,LinkedInShare,LinkedInShare).filelink)
+//this is the code I'm using in an active Power App. Mostly for my reference, but this is an example of how to call a Power Automate flow in a Power App
+
+Set(
+    FileLinkSharePoint,
+    SocialPicShare.Run(
+        TextInput1.Text & ".jpg",
+        Image1,
+        TwitterTweet,
+        TwitterTweet,
+        Message,
+        LinkedInShare,
+        LinkedInShare
+      )
+    .filelink
+  )
