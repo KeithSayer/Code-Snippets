@@ -1,0 +1,29 @@
+Salesperson Code = IF(
+    '2021_Sheet'[AS Sale Price Total (items + freight minus discounts)]>0,
+    "AS",
+    IF(
+        '2021_Sheet'[DREA Sale Price Total (items only minus discounts)]>0,
+        "DREA",
+        IF(
+            '2021_Sheet'[KK Sale Price Total (items + freight minus discounts)]>0,
+            "KK",
+            IF(
+                '2021_Sheet'[MC Sale Price Total (items only minus discounts)]>0,
+                "MC",
+                IF(
+                    '2021_Sheet'[JK Sale Price Total (items only minus discounts)]>0,
+                    "JK",
+                    IF(
+                        '2021_Sheet'[SH Sale Price Total (items + freight minus discounts)]>0,
+                        "SH",
+                        IF(
+                            '2021_Sheet'[SW Sale Price Total (items only minus discounts)]>0,
+                            "SW",
+                            "none"
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
