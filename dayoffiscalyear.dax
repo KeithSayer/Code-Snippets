@@ -1,0 +1,18 @@
+Day of the Fiscal Year = 
+//insert your fiscal year start month
+VAR fiscalyearstartmonth = 7
+//insert your fiscal year start day
+VAR fiscalyearstartday = 1
+VAR firstdateFY = IF(
+    MONTH(TODAY())>=fiscalyearstartmonth, 
+    DATE(YEAR(TODAY()),fiscalyearstartmonth, fiscalyearstartday),
+    DATE(YEAR(TODAY())-1,fiscalyearstartmonth,fiscalyearstartday
+    )
+)
+RETURN COUNTROWS(
+    DATESBETWEEN(
+        'date'[Date],
+        firstdateFY,
+        TODAY()
+    )
+)
