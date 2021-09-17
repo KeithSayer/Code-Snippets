@@ -3,12 +3,14 @@ Day of the Fiscal Year =
 VAR fiscalyearstartmonth = 7
 //insert your fiscal year start day
 VAR fiscalyearstartday = 1
+//determines if today's date is past the fiscal year start month or before it
 VAR firstdateFY = IF(
     MONTH(TODAY())>=fiscalyearstartmonth, 
     DATE(YEAR(TODAY()),fiscalyearstartmonth, fiscalyearstartday),
     DATE(YEAR(TODAY())-1,fiscalyearstartmonth,fiscalyearstartday
     )
 )
+//calculates the number of days between first date of FY and today
 RETURN COUNTROWS(
     DATESBETWEEN(
         'date'[Date],
