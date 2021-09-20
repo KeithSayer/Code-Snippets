@@ -1,12 +1,13 @@
-NPS Score = ​
+NPS Score = 
 
 //be sure you have a question in your survey asking "How likely would you be to recommend us?" with a scale of 0-10
 VAR detractors = CALCULATE(
     COUNTROWS('Your Table'),
         FILTER('Your Table',
         'Your Table'[NPS]<=6)
-    )​
+    )
 
+//don't forget to make your NPS question column into a whole number data type
 VAR passives = CALCULATE(
     COUNTROWS('Your Table'),
         FILTER('Your Table',
@@ -16,22 +17,20 @@ VAR passives = CALCULATE(
         COUNTROWS('Your Table'),
         FILTER('Your Table',
         'Your Table'[NPS]=8)
-    )​
+    )
 
 VAR promoters = CALCULATE(
     COUNTROWS('Your Table'),
         FILTER('Your Table',
         'Your Table'[NPS]>=9)
-    )​
+    )
+    
+VAR total = COUNTROWS('Your Table')
 
-VAR total = COUNTROWS('Your Table')​
-
-VAR score = (promoters/total*100)-(detractors/total*100)​
+VAR score = (promoters/total*100)-(detractors/total*100)
 
 RETURN If(
         ISBLANK(score),
         0,
         score
-    )​
-
-​
+    )
