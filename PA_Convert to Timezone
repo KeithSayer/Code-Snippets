@@ -1,0 +1,1 @@
+convertfromutc(utcnow(),'Eastern Standard Time','MM-dd-yyyy hh:mm')
