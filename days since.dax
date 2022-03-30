@@ -1,0 +1,5 @@
+Days Since = DATEDIFF(
+  FIRSTDATE(SalesData[Posting_Date]),
+  TODAY(),
+  Day
+)
