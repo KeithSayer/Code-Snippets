@@ -1,0 +1,18 @@
+Lookup tag = 
+
+var rowkey=salesTags[SalesOrderNo and SalesOrderLineNo]
+var ret_val =
+  SELECTCOLUMNS(
+    TOPN(
+      1,
+      CALCULATETABLE(salesLines,salesLines[Sales Order Line and No]=rowkey
+    )
+  ),
+"Sales Order Line and No",salesLines[Sales Order Line and No]
+)
+return
+if(
+  Isblank(ret_val)=TRUE(),
+  "Not Open",
+  "Open"
+)
