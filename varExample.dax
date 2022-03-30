@@ -1,0 +1,12 @@
+Salesperson Name = 
+var salespersonname = LOOKUPVALUE(
+    SalesPeople[Sales Person],
+    SalesPeople[Code],
+    SalesData[SalesPersonCode]
+    )
+return
+If(
+    LEN(salespersonname) = 0,
+    "Not Assigned",
+    salespersonname
+)
