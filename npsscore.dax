@@ -7,7 +7,7 @@ VAR detractors = CALCULATE(
         'Your Table'[NPS]<=6)
     )
 
-//don't forget to make your NPS question column into a whole number data type
+//don't forget to make your NPS question column into a whole number data type, yo
 VAR passives = CALCULATE(
     COUNTROWS('Your Table'),
         FILTER('Your Table',
