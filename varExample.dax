@@ -1,10 +1,13 @@
 Salesperson Name = 
+
+// First, we fetch the salesperson name and assign it to a variable
 var salespersonname = LOOKUPVALUE(
     SalesPeople[Sales Person],
     SalesPeople[Code],
     SalesData[SalesPersonCode]
     )
 return
+// Next, we create an if statement that determines if the string of the salesperson name is blank (i.e., length is 0). If that's true, Salesperson Name is set to "not assigned." If not true, set to salespersonname variable.
 If(
     LEN(salespersonname) = 0,
     "Not Assigned",
