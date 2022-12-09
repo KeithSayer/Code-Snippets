@@ -1,0 +1,1 @@
+@not(contains(triggerBody()?['from'],'Thomas.VanNevel@sjrmc.com'))
